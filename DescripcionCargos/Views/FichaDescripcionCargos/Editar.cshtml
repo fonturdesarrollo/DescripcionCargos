@@ -1,0 +1,265 @@
+﻿@model FichaDescriptivaCargoModel
+@{
+	Layout = "";
+}
+
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Ficha Descriptiva de Cargos</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="~/assets/css/main.css" />
+	<noscript><link rel="stylesheet" href="~/assets/css/noscript.css" /></noscript>
+	<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+	<style type="text/css">
+		@@page { size: auto;  margin: 0mm; }
+	</style>
+</head>
+<body class="is-preload">
+	@using (Html.BeginForm("Editar", "FichaDescripcionCargos", FormMethod.Post))
+	{
+		<!-- Wrapper -->
+		<div id="wrapper">
+
+			<!-- Header -->
+			<header id="header">
+				<div class="inner">
+
+					<!-- Logo -->
+					<img src="~/images/banner_800.png" alt="" />
+					<br />
+					<br />
+
+				</div>
+				<!-- Nav -->
+				<nav>
+					<ul>
+						<li><a href="#menu">Menu</a></li>
+					</ul>
+				</nav>
+			</header>
+
+			<!-- Menu -->
+			<nav id="menu">
+				<h2>Menu</h2>
+				<ul>
+					<li>@Html.ActionLink("Salir", "Login", "Login")</li>
+				</ul>
+			</nav>
+
+			<!-- Main -->
+			<div id="main">
+				<div class="inner">
+					<!-- Form -->
+					<section>
+						<div style="text-align:center" >
+							<h4 style="color:#4cbece">Ficha Descriptiva de Cargos </h4>
+						</div>
+
+						<br />
+						<strong>Identificación del Trabajador: </strong><br />
+						<span>Nombre:&nbsp;</span>
+						<span class="title">@ViewBag.PrimerNombreEmpleado @ViewBag.SegundoNombreEmpleado @ViewBag.PrimerApellidoEmpleado @ViewBag.SegundoApellidoEmpleado</span><br />
+						<span class="title">Cargo: &nbsp; @ViewBag.NombreCargo</span> &nbsp; Gerencia: &nbsp; <span class="title">@ViewBag.NombreGerencia</span>&nbsp; Oficina/Coordinación: &nbsp; <span class="title">@ViewBag.NombreDivision</span>
+						<span class="title">Cédula: &nbsp; @ViewBag.Cedula</span> &nbsp; Nivel Educativo: &nbsp; <span class="title">@ViewBag.NombreNivelEducativo</span> &nbsp; Estado: &nbsp; <span class="title">@ViewBag.NombreEstado</span>
+						<br />
+						<br />
+						<div class="row gtr-uniform">
+							<div class="col-12">
+								<strong>Nombre y apellido del supervisor inmediato:</strong>
+								@Html.TextBoxFor(x => x.NombreSupervisorInmediato, new {maxlength = "50", onclick= "$(this).select();"})
+							</div>
+							<div class="col-12">
+								<strong>Experiencia en el cargo:  <a href="~/images/Guia.pdf" target="_blank"><img src="~/images/pdf.jpg" alt="" class="ignoreForPrint" /></a></strong>
+								@Html.HiddenFor(x => x.PersonalId)
+								@Html.HiddenFor(x => x.Cedula)
+								@Html.HiddenFor(x => x.FichaDescriptivaCargoId)
+								@Html.TextAreaFor(x => x.ExperienciaCargo, new {@title="TIEMPO EN EL CARGO QUE OCUPA, EXPERIENCIA REQUERIDA PARA EL CARGO", maxlength = "50", onclick= "$(this).select();"})
+							</div>
+							<div class="col-20">
+								<strong>Conocimientos y habilidades:</strong>  <a href="~/images/Guia.pdf" target="_blank"><img src="~/images/pdf.jpg" alt="" class="ignoreForPrint" /></a>
+								@Html.TextAreaFor(x => x.ConocimientosHabilidades,  new {@title="MANEJO DE EQUIPO (EQUIPOS DE MANDO CENTRALIZADO Y TODOS AQUELLOS ASOCIADOS AL PUESTO DE TRABAJO), TÉCNICAS OPERATIVAS, CONOCIMIENTOS PARA EL MANEJO DE EQUIPOS", maxlength = "250", onclick= "$(this).select();"})
+							</div>
+							<div class="col-12">
+								<strong>Objetivo del cargo:  <a href="~/images/Guia.pdf" target="_blank"><img src="~/images/pdf.jpg" alt="" class="ignoreForPrint" /></a></strong>
+								@Html.TextAreaFor(x => x.ObjetivoCargo, new {@title="REGULAR LAS TARIFAS DE PASAJE DE TRANSPORTE COLECTIVO PARA QUE SEAN CONFIABLE, SEGÚN LOS PROCEDIMIENTOS Y NORMAS ESTABLECIDAS POR EL GOBIERNO NACIONAL", maxlength = "150", onclick= "$(this).select();"})
+							</div>
+							<div class="col-12">
+								<strong>Descripción de las tareas/actividades  <a href="~/images/Guia.pdf" target="_blank"><img src="~/images/pdf.jpg" alt=""  class="ignoreForPrint"/></a></strong><br />
+								<strong>¿Que hace?:</strong>
+								@Html.TextAreaFor(x => x.QueHace, new {maxlength = "250", onclick= "$(this).select();"})
+							</div>
+							<div class="col-12">
+								<strong>¿Cómo lo hace?:  <a href="~/images/Guia.pdf" target="_blank"><img src="~/images/pdf.jpg" alt="" class="ignoreForPrint" /></a></strong>
+								@Html.TextAreaFor(x => x.ComoLoHace, new {maxlength = "250", onclick= "$(this).select();"})
+							</div>
+							<div class="col-12">
+								<strong>¿Por qué lo hace?:  <a href="~/images/Guia.pdf" target="_blank"><img src="~/images/pdf.jpg" alt=""  class="ignoreForPrint"/></a></strong>
+								@Html.TextAreaFor(x => x.PorQueLoHace, new {maxlength = "250",onclick= "$(this).select();"})
+							</div>
+							<div class="col-12">
+								<strong>¿Para qué lo hace?:  <a href="~/images/Guia.pdf" target="_blank"><img src="~/images/pdf.jpg" alt="" class="ignoreForPrint" class="ignoreForPrint" /></a></strong>
+								@Html.TextAreaFor(x => x.ParaQueLoHace, new {maxlength = "250", onclick= "$(this).select();"})
+							</div>
+							<div class="col-12">
+								<strong>Linea de reporte, nivel de autonomia y responsabilidad:  <a href="~/images/Guia.pdf" target="_blank"><img src="~/images/pdf.jpg" alt="" class="ignoreForPrint" /></a></strong>
+								@Html.TextAreaFor(x => x.LineaReporteAutonomia, new {@title="DESCRIBIR LA RESPONSABILDAD, HASTA DONDE LLEGA SU ACTUACIÓN, A QUIEN REPORTA", maxlength = "150", onclick= "$(this).select();"})
+							</div>
+							<div class="col-12">
+								<strong>En este sentido es responsable por:  <a href="~/images/Guia.pdf" target="_blank"><img src="~/images/pdf.jpg" alt="" class="ignoreForPrint" /></a></strong>
+								@Html.TextAreaFor(x => x.ResponsablePor, new {maxlength = "150", onclick= "$(this).select();"})
+							</div>
+							<div class="col-12">
+								<strong>Riesgo laboral, Psicosociales:  <a href="~/images/Guia.pdf" target="_blank"><img src="~/images/pdf.jpg" alt="" class="ignoreForPrint" /></a></strong>
+								@Html.TextAreaFor(x => x.RiesgoCargo, new {@title="EL CARGO PUEDE ESTAR EXPUESTO A FACTORES DE EXCESO DE TRABAJO, TRABAJO GRUPAL Y CARGA MENTAL", maxlength = "150", onclick= "$(this).select();"})
+							</div>
+							<div class="col-12">
+								<strong>Capacitación/adiestramiento requerida:  <a href="~/images/Guia.pdf" target="_blank"><img src="~/images/pdf.jpg" alt="" class="ignoreForPrint" /></a></strong>
+								@Html.TextAreaFor(x => x.CursosCargo, new {@title="CURSOS REALIZADOS ASOCIADOS AL CARGO, EJEMPLOS: ACTUALIZACIÓN OPERATIVA, REDACCIÓN DE INFORMES TÉCNICOS, PROGRAMA DE FORMACIÓN AL PUESTO", maxlength = "150", onclick= "$(this).select();"})
+								<br />
+								<br />
+							</div>
+							<div class="col-6 col-12-xsmall">
+								<strong>Firma del trabajador_________________________________</strong>								
+							</div>
+							<div class="col-6 col-12-xsmall">
+								<strong>Firma del supervisor_________________________________</strong>
+							</div>
+							<div id="divGenInvoice" class="col-6 col-12-medium">
+								<ul class="actions">
+									<li><input type="submit" value="Actualizar" class="primary ignoreForPrint" id="saveRequest" /></li>
+								</ul>
+							</div>
+							<div id="print" class="col-6 col-12-medium">
+								<ul class="actions">
+									<li><input type="button" value="Imprimir" class="ignoreForPrint" id="print" /></li>
+								</ul>
+							</div>
+						</div>
+						<br />
+					</section>
+				</div>
+			</div>
+		</div>
+	}
+
+	@if (ViewBag.Message != null)
+	{
+		<script type="text/javascript">
+			window.onload = function () {
+				alert("@ViewBag.Message");
+			};
+		</script>
+	}
+	<!-- Scripts -->
+	<script src="~/assets/js/jquery.min.js"></script>
+	<script src="~/assets/js/browser.min.js"></script>
+	<script src="~/assets/js/breakpoints.min.js"></script>
+	<script src="~/assets/js/util.js"></script>
+	<script src="~/assets/js/main.js"></script>
+	@{
+		await Html.RenderPartialAsync("_ValidationScriptsPartial");
+	}
+	@***********************************************************@
+
+	<script type="text/javascript">
+		//Global Functions
+		var total = "0";
+		var totalInExchange = "0";
+		var ddlValue = "";
+
+		$(function () {
+			var focusedElement;
+			$(document).on('focus', 'input', function () {
+				if (focusedElement == this) return; //already focused, return so user can now place cursor at specific point in input.
+				focusedElement = this;
+				setTimeout(function () { focusedElement.select(); }, 100); //select all text in any field on focus for easy re-entry. Delay sightly to allow focus to "stick" before selecting.
+			});
+		});
+
+		$("body").on("click", "#saveRequest", function () {
+			if (isOkToSave()) {
+				return true;
+			}
+		});
+
+		function isOkToSave() {
+			if ($("#NombreSupervisorInmediato").val() == "") {
+				alert("Debe colocar el nombre del supervisor inmediato");
+				return false;
+			}
+			
+			if ($("#ExperienciaCargo").val() == "") {
+				alert("Debe colocar la experiencia en el cargo");
+				return false;
+			}
+
+			if ($("#ConocimientosHabilidades").val() == "") {
+				alert("Debe colocar los conocimientos y habilidades");
+				return false;
+			}
+
+			if ($("#ObjetivoCargo").val() == "") {
+				alert("Debe colocar el objetivo del cargo");
+				return false;
+			}
+
+			if ($("#QueHace").val() == "") {
+				alert("Debe colocar el valor ¿Que Hace?");
+				return false;
+			}
+			
+			if ($("#ComoLoHace").val() == "") {
+				alert("Debe colocar el valor ¿Como lo Hace?");
+				return false;
+			}
+
+			if ($("#PorQueLoHace").val() == "") {
+				alert("Debe colocar el valor ¿Por qué lo Hace?");
+				return false;
+			}
+
+			if ($("#ParaQueLoHace").val() == "") {
+				alert("Debe colocar el valor ¿Para qué lo Hace?");
+				return false;
+			}
+
+			if ($("#LineaReporteAutonomia").val() == "") {
+				alert("Debe colocar el valor línea autonomia");
+				return false;
+			}			
+
+			if ($("#ResponsablePor").val() == "") {
+				alert("Debe colocar el valor de la responsabilidad");
+				return false;
+			}
+
+			if ($("#RiesgoCargo").val() == "") {
+				alert("Debe colocar el riesgo del cargo");
+				return false;
+			}
+
+			if ($("#CursosCargo").val() == "") {
+				alert("Debe colocar los cursos del cargo");
+				return false;
+			}
+		}
+
+		$(document).ready(function () {
+			$("#print").click(function () {
+				$(".ignoreForPrint").hide();
+				window.print();
+				$(".ignoreForPrint").show();
+			});
+
+		});//end document ready
+
+	</script>
+
+</body>
+</html>
+
+
