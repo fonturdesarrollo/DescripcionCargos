@@ -1,0 +1,47 @@
+﻿@{
+	Layout = "";
+}
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>CATALOGO DE PRODUCTOS</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="~/assets/css/main.css" />
+	<noscript><link rel="stylesheet" href="~/assets/css/noscript.css" /></noscript>
+	<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+</head>
+<body onload="openInNewTab()">
+	<!-- Scripts -->
+	<script src="~/assets/js/jquery.min.js"></script>
+	<script src="~/assets/js/browser.min.js"></script>
+	<script src="~/assets/js/breakpoints.min.js"></script>
+	<script src="~/assets/js/util.js"></script>
+	<script src="~/assets/js/main.js"></script>
+	@***********************************************************@
+
+	<div style="text-align:center" class="col-12">
+		<br />
+		<br />
+		<br />
+		@*<a id="mylink" href="~/images/catalogo.pdf">Catálogo de Productos</a>*@
+		<a id="mylink"  href="~/images/catalogo.pdf"><img src="~/images/catalago_portada.png" /></a>
+	</div>
+
+	<script type="text/javascript">
+		function openInNewTab() {
+				var a = document.getElementById("mylink");
+			var win = window.open(a, "_self");
+			win.focus();
+	}
+
+	$(document).ready(function () {
+
+
+	});//end document ready
+
+	</script>
+</body>
+</html>

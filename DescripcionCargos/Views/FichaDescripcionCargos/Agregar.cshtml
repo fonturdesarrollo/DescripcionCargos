@@ -71,55 +71,55 @@
 						<div class="row gtr-uniform">
 							<div class="col-12">
 								<strong>Nombre y apellido del supervisor inmediato:</strong>
-								@Html.TextBoxFor(x => x.NombreSupervisorInmediato, new {maxlength = "50", onclick= "$(this).select();"})
+								@Html.TextBoxFor(x => x.NombreSupervisorInmediato, new {maxlength = "50"})
 							</div>
 							<div class="col-12">
 								<strong>Experiencia en el cargo:  <a href="~/images/experiencia.png" target="_blank"><img src="~/images/pdf.jpg" alt="" class="ignoreForPrint" /></a></strong>
 								@Html.HiddenFor(x => x.PersonalId)
 								@Html.HiddenFor(x => x.Cedula)
 								@Html.HiddenFor(x => x.FichaDescriptivaCargoId)
-								@Html.TextAreaFor(x => x.ExperienciaCargo, new {@title="TIEMPO EN EL CARGO QUE OCUPA, EXPERIENCIA REQUERIDA PARA EL CARGO", maxlength = "50", onclick= "$(this).select();"})
+								@Html.TextAreaFor(x => x.ExperienciaCargo, new {@title="TIEMPO EN EL CARGO QUE OCUPA, EXPERIENCIA REQUERIDA PARA EL CARGO", maxlength = "50"})
 							</div>
-							<div class="col-18 hola">
+							<div class="col-18">
 								<strong>Conocimientos y habilidades:</strong>  <a href="~/images/habilidades.png" target="_blank"><img src="~/images/pdf.jpg" alt="" class="ignoreForPrint" /></a>
-								@Html.TextAreaFor(x => x.ConocimientosHabilidades, new {@title="MANEJO DE EQUIPO (EQUIPOS DE MANDO CENTRALIZADO Y TODOS AQUELLOS ASOCIADOS AL PUESTO DE TRABAJO), TÉCNICAS OPERATIVAS, CONOCIMIENTOS PARA EL MANEJO DE EQUIPOS", maxlength = "250", onclick= "$(this).select();"})
+								@Html.TextAreaFor(x => x.ConocimientosHabilidades, new {@title="MANEJO DE EQUIPO (EQUIPOS DE MANDO CENTRALIZADO Y TODOS AQUELLOS ASOCIADOS AL PUESTO DE TRABAJO), TÉCNICAS OPERATIVAS, CONOCIMIENTOS PARA EL MANEJO DE EQUIPOS", maxlength = "250"})
 							</div>
 							<div class="col-12">
 								<strong>Objetivo del cargo:  <a href="~/images/objetivo.png" target="_blank"><img src="~/images/pdf.jpg" alt="" class="ignoreForPrint" /></a></strong>
-								@Html.TextAreaFor(x => x.ObjetivoCargo, new {@title="REGULAR LAS TARIFAS DE PASAJE DE TRANSPORTE COLECTIVO PARA QUE SEAN CONFIABLE, SEGÚN LOS PROCEDIMIENTOS Y NORMAS ESTABLECIDAS POR EL GOBIERNO NACIONAL", maxlength = "150", onclick= "$(this).select();"})
+								@Html.TextAreaFor(x => x.ObjetivoCargo, new {@title="REGULAR LAS TARIFAS DE PASAJE DE TRANSPORTE COLECTIVO PARA QUE SEAN CONFIABLE, SEGÚN LOS PROCEDIMIENTOS Y NORMAS ESTABLECIDAS POR EL GOBIERNO NACIONAL", maxlength = "150"})
 							</div>
 							<div class="col-12">
 								<strong>Descripción de las tareas/actividades  <a href="~/images/actividades.png" target="_blank"><img src="~/images/pdf.jpg" alt="" class="ignoreForPrint" /></a></strong><br />
 								<strong>¿Que hace?:</strong>
-								@Html.TextAreaFor(x => x.QueHace, new {maxlength = "250", onclick= "$(this).select();"})
+								@Html.TextAreaFor(x => x.QueHace, new {maxlength = "250"})
 							</div>
 							<div class="col-12">
 								<strong>¿Cómo lo hace?:  <a href="~/images/actividades.png" target="_blank"><img src="~/images/pdf.jpg" alt="" class="ignoreForPrint" /></a></strong>
-								@Html.TextAreaFor(x => x.ComoLoHace, new {maxlength = "250", onclick= "$(this).select();"})
+								@Html.TextAreaFor(x => x.ComoLoHace, new {maxlength = "250"})
 							</div>
 							<div class="col-12">
 								<strong>¿Por qué lo hace?:  <a href="~/images/actividades.png" target="_blank"><img src="~/images/pdf.jpg" alt="" class="ignoreForPrint" /></a></strong>
-								@Html.TextAreaFor(x => x.PorQueLoHace, new {maxlength = "250",onclick= "$(this).select();"})
+								@Html.TextAreaFor(x => x.PorQueLoHace, new {maxlength = "250"})
 							</div>
 							<div class="col-12">
 								<strong>¿Para qué lo hace?:  <a href="~/images/actividades.png" target="_blank"><img src="~/images/pdf.jpg" alt="" class="ignoreForPrint" /></a></strong>
-								@Html.TextAreaFor(x => x.ParaQueLoHace, new {maxlength = "250", onclick= "$(this).select();"})
+								@Html.TextAreaFor(x => x.ParaQueLoHace, new {maxlength = "250"})
 							</div>
 							<div class="col-12">
 								<strong>Linea de reporte, nivel de autonomia y responsabilidad:  <a href="~/images/autonomia.png" target="_blank"><img src="~/images/pdf.jpg" alt="" class="ignoreForPrint" /></a></strong>
-								@Html.TextAreaFor(x => x.LineaReporteAutonomia, new {@title="DESCRIBIR LA RESPONSABILDAD, HASTA DONDE LLEGA SU ACTUACIÓN, A QUIEN REPORTA", maxlength = "150", onclick= "$(this).select();"})
+								@Html.TextAreaFor(x => x.LineaReporteAutonomia, new {@title="DESCRIBIR LA RESPONSABILDAD, HASTA DONDE LLEGA SU ACTUACIÓN, A QUIEN REPORTA", maxlength = "150"})
 							</div>
 							<div class="col-12">
-								<strong>En este sentido es responsable por:  <a href="~/images/autonomia" target="_blank"><img src="~/images/pdf.jpg" alt="" class="ignoreForPrint" /></a></strong>
-								@Html.TextAreaFor(x => x.ResponsablePor, new {maxlength = "150", onclick= "$(this).select();"})
+								<strong>En este sentido es responsable por:  <a href="~/images/autonomia.png" target="_blank"><img src="~/images/pdf.jpg" alt="" class="ignoreForPrint" /></a></strong>
+								@Html.TextAreaFor(x => x.ResponsablePor, new {maxlength = "150"})
 							</div>
 							<div class="col-12">
 								<strong>Riesgo laboral, Psicosociales:  <a href="~/images/riesgo.png" target="_blank"><img src="~/images/pdf.jpg" alt="" class="ignoreForPrint" /></a></strong>
-								@Html.TextAreaFor(x => x.RiesgoCargo, new {@title="EL CARGO PUEDE ESTAR EXPUESTO A FACTORES DE EXCESO DE TRABAJO, TRABAJO GRUPAL Y CARGA MENTAL", maxlength = "150", onclick= "$(this).select();"})
+								@Html.TextAreaFor(x => x.RiesgoCargo, new {@title="EL CARGO PUEDE ESTAR EXPUESTO A FACTORES DE EXCESO DE TRABAJO, TRABAJO GRUPAL Y CARGA MENTAL", maxlength = "150"})
 							</div>
 							<div class="col-12">
 								<strong>Capacitación/adiestramiento requerida:  <a href="~/images/capacitacion.png" target="_blank"><img src="~/images/pdf.jpg" alt="" class="ignoreForPrint" /></a></strong>
-								@Html.TextAreaFor(x => x.CursosCargo, new {@title="CURSOS REALIZADOS ASOCIADOS AL CARGO, EJEMPLOS: ACTUALIZACIÓN OPERATIVA, REDACCIÓN DE INFORMES TÉCNICOS, PROGRAMA DE FORMACIÓN AL PUESTO", maxlength = "150", onclick= "$(this).select();"})
+								@Html.TextAreaFor(x => x.CursosCargo, new {@title="CURSOS REALIZADOS ASOCIADOS AL CARGO, EJEMPLOS: ACTUALIZACIÓN OPERATIVA, REDACCIÓN DE INFORMES TÉCNICOS, PROGRAMA DE FORMACIÓN AL PUESTO", maxlength = "150"})
 								<br />
 								<br />
 							</div>
@@ -168,18 +168,15 @@
 
 	<script type="text/javascript">
 		//Global Functions
-		var total = "0";
-		var totalInExchange = "0";
-		var ddlValue = "";
 
-		$(function () {
-			var focusedElement;
-			$(document).on('focus', 'input', function () {
-				if (focusedElement == this) return; //already focused, return so user can now place cursor at specific point in input.
-				focusedElement = this;
-				setTimeout(function () { focusedElement.select(); }, 100); //select all text in any field on focus for easy re-entry. Delay sightly to allow focus to "stick" before selecting.
-			});
-		});
+		//$(function () {
+		//	var focusedElement;
+		//	$(document).on('focus', 'input', function () {
+		//		if (focusedElement == this) return; //already focused, return so user can now place cursor at specific point in input.
+		//		focusedElement = this;
+		//		setTimeout(function () { focusedElement.select(); }, 100); //select all text in any field on focus for easy re-entry. Delay sightly to allow focus to "stick" before selecting.
+		//	});
+		//});
 
 		$("body").on("click", "#saveRequest", function () {
 			if (isOkToSave()) {
